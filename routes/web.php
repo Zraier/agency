@@ -43,12 +43,12 @@ Route::middleware('auth','role:admin')->group(function(){
     Route::get('/admin/profile', [AdminController::class, 'Adminprofile'])->name('admin.profile');
     Route::post('/admin/profile', [AdminController::class, 'Adminprofileupdate'])->name('admin.profile.update');
     Route::get('/admin/changePass', [AdminController::class, 'AdminPassword'])->name('admin.password');
-    Route::POST('/admin/changePass', [AdminController::class, 'AdminChangePassword'])->name('admin.change.password');
+    Route::post('/admin/changePass', [AdminController::class, 'AdminChangePassword'])->name('admin.change.password');
 
 
 });
 
-Route::middleware('auth','role:agent')->group(function(){
+    Route::middleware('auth','role:agent')->group(function(){
 
     Route::get('/agent/dashboard', [AgentController::class, 'Agentdashboard'])->name('agent.dashboard');
 

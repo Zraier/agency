@@ -74,8 +74,9 @@ class AdminController extends Controller
 
     public function AdminPassword()
     {
-        
-        return view('admin.admin_change_password');
+        $id= auth::user()->id;
+        $profileData = User::find($id); 
+        return view('admin.admin_change_password',compact('profileData'));
     }
 
     public function AdminChangePassword(Request $request)
@@ -91,9 +92,21 @@ class AdminController extends Controller
         ]
         );
         if (!Hash::check($request->current_password, auth::user()->password)) {
-            # code...
+              $notification = array(
+                'message' => 'Current Password Does Not Match!!',
+                'alert-type'=> 'error');
+                return redirect()->back()->with($notification);
         }
-        $data->save();
+
+        //find ID then update his password with the password coming from request
+            user::whereId(auth()->user()->id)->update([
+                'password'=>hash::make($request->password)
+            ]);
+
+            // this works too but i wanted to try the previous one
+        // $data->password = hash::make($request->password);
+        // $data->save();
+
         $notification = array(
             'message' => 'Password Update Successfully',
             'alert-type'=> 'success'
