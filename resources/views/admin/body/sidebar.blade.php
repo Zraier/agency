@@ -1,7 +1,7 @@
 <nav class="sidebar">
     <div class="sidebar-header">
       <a href="#" class="sidebar-brand">
-        Maryem<span>Project</span>
+        Slim<span>Project</span>
       </a>
       <div class="sidebar-toggler not-active">
         <span></span>
