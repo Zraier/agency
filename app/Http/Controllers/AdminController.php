@@ -22,6 +22,13 @@ class AdminController extends Controller
         
     }
 
+    public function AdminUsers() {
+       
+        $UserData = User::all();
+        return view('admin.users', compact('UserData'));
+            
+        }
+
 
     public function Adminlogout(Request $request): RedirectResponse
     {

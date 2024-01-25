@@ -41,9 +41,9 @@
         </li>
         
         <li class="nav-item">
-          <a href="pages/apps/calendar.html" class="nav-link">
-            <i class="link-icon" data-feather="calendar"></i>
-            <span class="link-title">Calendar</span>
+          <a href="{{ route('admin.users') }}" class="nav-link">
+            <i class="link-icon" data-feather="users"></i>
+            <span class="link-title">Users</span>
           </a>
         </li>
         <li class="nav-item nav-category">Components</li>
