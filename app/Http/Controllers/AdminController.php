@@ -65,7 +65,7 @@ class AdminController extends Controller
         $data->address = $request->address;
         if ($request->file('photo')) {
             $file = $request->file('photo');
-            $filename= date('YmdHi').$file->getClientOriginalName();
+            $filename= $data->name.date('Ymd').'.jpg';
             $file->move(public_path('upload/admin_image'),$filename);
             $data['photo']=$filename;
         }
