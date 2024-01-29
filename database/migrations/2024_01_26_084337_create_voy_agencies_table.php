@@ -12,11 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('voy_agencies', function (Blueprint $table) {
-            $table->id('id_vage');
+            $table->id('ref_voy');
             $table->string('pays');
             $table->string('programme');
-            $table->string('date');
+            $table->date('date');
             $table->string('duree');
+            $table->string('image');
             $table->string('id_age');
             $table->enum('status',['done','arrive'])->default('arrive');
             $table->timestamps();

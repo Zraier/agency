@@ -11,14 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('employees', function (Blueprint $table) {
-            $table->id('id_emp');
-            $table->string('name');
-            $table->string('password');
-            $table->string('address');
-            $table->string('email');
-            $table->string('tel');
-            $table->enum('status',['active','inactive'])->default('active');
+        Schema::create('ent_doms', function (Blueprint $table) {
+            $table->id();
+            $table->string('domaine_activity');
             $table->string('id_ent');
             $table->timestamps();
         });
@@ -29,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('employees');
+        Schema::dropIfExists('ent_doms');
     }
 };
