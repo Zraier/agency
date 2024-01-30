@@ -12,13 +12,21 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('voy_agencies', function (Blueprint $table) {
+<<<<<<< HEAD
             $table->id('ref_voy_agnce');
+=======
+            $table->id('ref_voy');
+>>>>>>> origin/main
             $table->string('pays');
             $table->string('programme');
             $table->date('date');
             $table->string('duree');
             $table->string('image');
+<<<<<<< HEAD
             $table->string('id_agence');
+=======
+            $table->string('id_age');
+>>>>>>> origin/main
             $table->enum('status',['done','arrive'])->default('arrive');
             $table->timestamps();
         });

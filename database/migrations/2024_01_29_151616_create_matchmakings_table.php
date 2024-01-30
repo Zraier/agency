@@ -13,11 +13,18 @@ return new class extends Migration
     {
         Schema::create('matchmakings', function (Blueprint $table) {
             $table->id();
+<<<<<<< HEAD
             $table->string('id_emp');
             $table->string('id_agence');
             $table->string('ref_voy_user');
             $table->string('ref_voy_agence');
 
+=======
+            $table->text('id_emp');
+            $table->text('id_age');
+            $table->text('ref_voyu');
+            $table->text('ref_voya');
+>>>>>>> origin/main
             $table->timestamps();
         });
     }
