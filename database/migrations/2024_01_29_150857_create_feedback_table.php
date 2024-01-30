@@ -11,15 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('voy_agencies', function (Blueprint $table) {
-            $table->id('ref_voy_agnce');
-            $table->string('pays');
-            $table->string('programme');
-            $table->date('date');
-            $table->string('duree');
+        Schema::create('feedback', function (Blueprint $table) {
+            $table->id();
+            $table->string('ref_voy');
+            $table->text('avis');
             $table->string('image');
-            $table->string('id_agence');
-            $table->enum('status',['done','arrive'])->default('arrive');
+            $table->string('id_emp');
             $table->timestamps();
         });
     }
@@ -29,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('voy_agencies');
+        Schema::dropIfExists('feedback');
     }
 };

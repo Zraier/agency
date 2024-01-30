@@ -14,11 +14,10 @@ return new class extends Migration
         Schema::create('entreprises', function (Blueprint $table) {
             $table->id('id_ent');
             $table->string('name');
-            $table->string('password');
-            $table->string('address');
-            $table->string('domaine');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('tel');
+            $table->string('address');
+            $table->string('id_domaine');
             $table->enum('status',['active','inactive'])->default('active');
             $table->timestamps();
         });

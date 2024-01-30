@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('voy_users', function (Blueprint $table) {
-            $table->id('id_vuser');
+            $table->id('ref_voy_user');
             $table->string('pays');
             $table->string('programme');
-            $table->string('date');
+            $table->date('date');
             $table->string('duree');
             $table->string('avis');
             $table->string('id_emp');

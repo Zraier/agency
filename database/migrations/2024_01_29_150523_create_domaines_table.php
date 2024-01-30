@@ -11,13 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('agencies', function (Blueprint $table) {
-            $table->id('id_agence');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('tel');
-            $table->string('address');  
-            $table->enum('status',['active','inactive'])->default('active');
+        Schema::create('domaines', function (Blueprint $table) {
+            $table->id();
+            $table->string('domaine_activity');
             $table->timestamps();
         });
     }
@@ -27,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('agencies');
+        Schema::dropIfExists('domaines');
     }
 };
