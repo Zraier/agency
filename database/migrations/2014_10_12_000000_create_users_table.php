@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('password');
             $table->enum('role',['entreprise','employee','agence']);
             $table->enum('status',['active','inactive'])->default('active');
+            $table->string('id_cnx');
             $table->rememberToken();
             $table->timestamps();
         });
